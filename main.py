@@ -48,6 +48,7 @@ def selenium_scroll_option():
 # 검색어로 크롤링하기
 dog ='./dog/'
 lion = './lion/'
+tiger = './tiger/'
 
 #키워드 검색
 search = input('검색할 키워드 입력 :')
@@ -88,9 +89,16 @@ if image_name == 'dog':
         urlretrieve(url, dog + image_name + '_' + str(d) + '.jpg')
 
     driver.close()
+
 elif image_name == 'lion':
     for l, url in enumerate(images_url, 0):
         urlretrieve(url, lion + image_name + '_' + str(l) + '.jpg')
+    
+    driver.close()
+
+elif image_name == 'tiger':
+    for t,url in enumerate(images_url, 0):
+        urlretrieve(url, tiger + image_name + '_' + str(t) + '.jpg')
     
     driver.close()
 
